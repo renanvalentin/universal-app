@@ -2,25 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Paper from 'material-ui/lib/paper';
-
-
-const style = {
-    height: 100,
-    width: 100,
-    margin: 20,
-    textAlign: 'center',
-    display: 'inline-block',
-};
+import HomeFeature from './home-feature';
 
 const PaperExampleSimple = () => (
     <div>
-        <Paper style={style} zDepth={1}/>
-        <Paper style={style} zDepth={2}/>
-        <Paper style={style} zDepth={3}/>
-        <Paper style={style} zDepth={4}/>
-        <Paper style={style} zDepth={5}/>
+        <HomeFeature
+            heading="Get Started"
+            route="/get-started"
+            img="http://52.19.95.42:3000/images/css-framework.svg"
+            firstChild={true}
+            buttonLabel="Customize"
+        />
     </div>
 );
+
 
 ReactDOM.render(
     <PaperExampleSimple />,
