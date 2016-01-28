@@ -5,14 +5,15 @@ import {Paper, Mixins, Styles, RaisedButton} from 'material-ui';
 let {StylePropable, StyleResizable} = Mixins;
 let {Colors, Spacing, Transitions, Typography} = Styles;
 
-let HomeFeature = React.createClass({
+let ProductCard = React.createClass({
 
     propTypes: {
         firstChild: React.PropTypes.bool,
         heading: React.PropTypes.string,
         img: React.PropTypes.string,
         lastChild: React.PropTypes.bool,
-        buttonLabel: React.PropTypes.string
+        buttonLabel: React.PropTypes.string,
+        onButtonClick: React.PropTypes.func.isRequired
     },
 
     mixins: [StylePropable, StyleResizable],
@@ -118,10 +119,14 @@ let HomeFeature = React.createClass({
                 <h3 style={styles.heading}>{this.props.heading}</h3>
 
                 <img style={styles.image} src={this.props.img}/>
-                <RaisedButton label={this.props.buttonLabel} primary={true} style={styles.raisedButton} />
+                <RaisedButton
+                    label={this.props.buttonLabel}
+                    primary={true}
+                    style={styles.raisedButton}
+                    onMouseDown={this.props.onButtonClick}/>
             </Paper>
         );
     }
 });
 
-export default HomeFeature;
+export default ProductCard;

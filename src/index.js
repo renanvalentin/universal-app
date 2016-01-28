@@ -1,23 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Paper from 'material-ui/lib/paper';
-import HomeFeature from './home-feature';
+import Catalog from './catalog';
 
-const PaperExampleSimple = () => (
-    <div>
-        <HomeFeature
-            heading="Get Started"
-            route="/get-started"
-            img="http://52.19.95.42:3000/images/css-framework.svg"
-            firstChild={true}
-            buttonLabel="Customize"
-        />
-    </div>
-);
+require('./main.css');
 
 
 ReactDOM.render(
-    <PaperExampleSimple />,
+    <Catalog />,
     document.getElementById('app')
 );
