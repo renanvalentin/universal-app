@@ -2,14 +2,10 @@ import React, {Component} from 'react';
 
 import Paper from 'material-ui/lib/paper';
 import ProductCard from './product-card';
+import Product from './product';
+
 
 import draggable from './draggable';
-
-class Product extends Component {
-    render() {
-        return (<div>batman</div>);
-    }
-}
 
 class Catalog extends Component {
     constructor(props) {
@@ -26,8 +22,11 @@ class Catalog extends Component {
 
     render() {
         let product;
-        if(this.state.showingProduct) {
-            product = draggable(<Product />);
+        if (this.state.showingProduct) {
+            product = draggable(Product, {
+                relativeTo: '.card-style > div',
+                container: '.product'
+            });
         }
 
         return (
@@ -38,8 +37,9 @@ class Catalog extends Component {
                     firstChild={true}
                     buttonLabel="Customize"
                     onButtonClick={() => this.toggleProductState()}
-                />
-                {product}
+                >
+                    {product}
+                </ProductCard>
             </div>
         );
     }

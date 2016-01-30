@@ -38,6 +38,7 @@ let ProductCard = React.createClass({
             root: {
                 transition: Transitions.easeOut(),
                 maxWidth: '300px',
+                position: 'relative',
                 margin: '0 auto ' + desktopGutter + 'px auto',
             },
             rootWhenMedium: {
@@ -124,6 +125,7 @@ let ProductCard = React.createClass({
                     primary={true}
                     style={styles.raisedButton}
                     onMouseDown={this.props.onButtonClick}/>
+                {this.props.children}
             </Paper>
         );
     }
